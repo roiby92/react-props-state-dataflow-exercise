@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
 class Landing extends Component {
-    /* your code here */
 
+    findHotest() {
+        const theHottest = this.props.store.find(i => i.hottest === true)
+        return theHottest
+    }
 
     render() {
-        return {/* your code here */ }
-
+        const item = this.findHotest()
+        return <span>the hottest item is {item.item} for ${item.price}</span>
     }
 }
 
