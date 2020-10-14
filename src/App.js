@@ -42,11 +42,7 @@ class App extends Component {
   // your upperCase method here
   upperCase = name => name.toUpperCase()
 
-  shouldDiscount(){
-    if(this.state.shouldDiscount){
-      return this.state.store.forEach(i=>i.price*=(1-i.discount))
-    }
-  }
+  
 
   render() {
 
@@ -142,8 +138,8 @@ class App extends Component {
         <div className="ex-space">
           <h4 className="ex-title">Exercise 4</h4>
           <div className="exercise" id="ex-4">
-            {this.shouldDiscount()}
-            <Home store={this.state.store} />
+            
+            <Home store={this.state.store} discount={this.state.shouldDiscount}/>
           </div>
         </div>
 
